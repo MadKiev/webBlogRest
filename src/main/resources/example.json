@@ -1,0 +1,26 @@
+{
+  "id":"1",
+  "name":"Best Elixir",
+  "recipe":[
+    {
+      "id":"1",
+      "name":"Best recipe",
+      "ingredient":{
+
+        "id":"id1",
+        "name":"Ingredient 1"
+      },
+      "quantity":2.1
+    },
+    {
+      "id":"2",
+      "name":"Best recipe",
+      "ingredient":{
+
+        "id":"id2",
+        "name":"Ingredient 2"
+      },
+      "quantity":10.5
+    }
+  ]
+}
