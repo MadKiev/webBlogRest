@@ -1,13 +1,14 @@
 package com.gmail.madkiev.repository;
 
 import com.gmail.madkiev.model.BlogPost;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class InMemoryBlogPostRepository implements BlogPostRepository {
+public class BlogPostRepositoryImpl implements BlogPostRepository {
     Map<String, BlogPost> BlogPostMap = new HashMap<>();
 
     @Override
@@ -30,4 +31,5 @@ public class InMemoryBlogPostRepository implements BlogPostRepository {
     public void deleteBlogPost(String id) {
         BlogPostMap.remove(id);
     }
+
 }

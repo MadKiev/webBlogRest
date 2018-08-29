@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Elixirs:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="blogPost-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Elixirs:war exploded" />
+    </root>
+  </artifact>
+</component>
