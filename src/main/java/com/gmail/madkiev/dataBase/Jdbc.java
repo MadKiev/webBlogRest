@@ -7,7 +7,7 @@ public class Jdbc {
         Connection conn = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:BlogPost.db"; // dataTable not created yet
+            String url = "jdbc:sqlite:blog.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
 
