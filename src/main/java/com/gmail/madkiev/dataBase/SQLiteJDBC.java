@@ -4,7 +4,7 @@ import java.sql.*;
 public class SQLiteJDBC {
 
     /**
-     * Connect to the test.db database
+     * Connect to the blog.db database
      * @return the Connection object
      */
     private Connection connect() {
@@ -21,10 +21,10 @@ public class SQLiteJDBC {
 
 
     /**
-     * select all rows in the warehouses table
+     * select all rows in the blog table
      */
     public void selectAll(){
-        String sql = "SELECT id, name, message FROM warehouses";
+        String sql = "SELECT id, name, message FROM blog";
 
         try (Connection conn = this.connect();
              Statement stmt  = conn.createStatement();
