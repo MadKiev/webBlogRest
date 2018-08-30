@@ -1,6 +1,11 @@
 package com.gmail.madkiev.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class BlogPost {
+    @Id
     private String id;
     private String name;
     private String message;
@@ -29,5 +34,12 @@ public class BlogPost {
         this.name = name;
     }
 
-
+    @Override
+    public String toString() {
+        return "BlogPost{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
 }
