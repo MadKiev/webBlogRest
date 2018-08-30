@@ -29,29 +29,37 @@ public class BlogPostController {
         return blogPost;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
     public @ResponseBody
     BlogPost getBlogPost(@PathVariable("id") String blogPost) {
         logger.info("Start getBlogPost. ID="+blogPost);
-
-        return blogPostRepository.getBlogPost(blogPost);
+        Optional<BlogPost> post = blogPostRepository.findById(blogPost);
+        return post.orElseThrow(() ->new RuntimeException("Post not found"));
     }
-    @RequestMapping(value = "/allPosts", method = RequestMethod.GET)
+    @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public @ResponseBody
     List<BlogPost> getAllBlogPost() {
         logger.info("Start getAllBlogPost.");
-        return blogPostRepository.getBlogPost();
+        return blogPostRepository.findAll();
     }
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/posts", method = RequestMethod.POST)
     public @ResponseBody
     BlogPost createBlogPost(@RequestBody BlogPost blogPost) {
         logger.info("Start createBlogPost.");
-        return blogPostRepository.saveBlogPost(blogPost);
+        return blogPostRepository.save(blogPost);
     }
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+
+    @RequestMapping(value = "/posts/{id}", method = RequestMethod.PUT)
+    public @ResponseBody
+    BlogPost updateBlogPost(@RequestBody BlogPost blogPost) {
+        logger.info("Update blog.");
+        return blogPostRepository.save(blogPost);
+    }
+
+    @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
     public @ResponseBody
     void deleteBlogPost(@PathVariable("id") String blogPostId) {
         logger.info("Start deleteBlogPost.");
-        blogPostRepository.deleteBlogPost(blogPostId);
+        blogPostRepository.deleteById(blogPostId);
     }
 }

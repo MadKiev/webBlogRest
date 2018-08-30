@@ -7,13 +7,11 @@
           <element id="module-output" name="BlogPost" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: io.netty:netty-all:4.1.16.Final" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:2.0.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:2.0.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.0.3.RELEASE" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.10.0" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.10.0" />
           <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.25" />
@@ -28,6 +26,10 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.6" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.6" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.6" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.5.31" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:8.5.31" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:8.5.31" />
           <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.0.10.Final" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:2.0.1.Final" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
@@ -38,34 +40,27 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jetty:2.0.3.RELEASE" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-servlets:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-continuation:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-http:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-util:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-io:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-webapp:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-xml:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-servlet:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-security:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-server:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.websocket:websocket-server:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.websocket:websocket-common:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.websocket:websocket-api:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.websocket:websocket-client:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-client:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.websocket:websocket-servlet:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.websocket:javax-websocket-server-impl:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-annotations:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty:jetty-plus:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm:6.2" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm-commons:6.2" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm-tree:6.2" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm-analysis:6.2" />
-          <element id="library" level="project" name="Maven: org.eclipse.jetty.websocket:javax-websocket-client-impl:9.4.11.v20180605" />
-          <element id="library" level="project" name="Maven: javax.websocket:javax.websocket-api:1.0" />
-          <element id="library" level="project" name="Maven: org.mortbay.jasper:apache-el:8.5.24.2" />
+          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.13" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:2.7.9" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.2.17.Final" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.22.0-GA" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
+          <element id="library" level="project" name="Maven: org.jboss:jandex:2.0.3.Final" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" />
+          <element id="library" level="project" name="Maven: javax.transaction:javax.transaction-api:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:2.0.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:2.0.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.0.7.RELEASE" />
+          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.197" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.0.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:2.0.3.RELEASE" />
         </element>
