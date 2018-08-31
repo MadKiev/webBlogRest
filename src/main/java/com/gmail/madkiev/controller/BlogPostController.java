@@ -1,10 +1,13 @@
 package com.gmail.madkiev.controller;
 
+import com.gmail.madkiev.exception.RestOperationException;
 import com.gmail.madkiev.model.BlogPost;
 import com.gmail.madkiev.repository.BlogPostRepository;
+import com.gmail.madkiev.service.BlogPostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +20,7 @@ public class BlogPostController {
     private static final Logger logger = LoggerFactory.getLogger(BlogPostController.class);
 
     @Autowired
-    private BlogPostRepository blogPostRepository;
+    private BlogPostService blogPostService;
 
     @RequestMapping(value = "/blogPostTest", method = RequestMethod.GET)
     public @ResponseBody
@@ -31,35 +34,42 @@ public class BlogPostController {
 
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
     public @ResponseBody
-    BlogPost getBlogPost(@PathVariable("id") String blogPost) {
-        logger.info("Start getBlogPost. ID="+blogPost);
-        Optional<BlogPost> post = blogPostRepository.findById(blogPost);
-        return post.orElseThrow(() ->new RuntimeException("Post not found"));
+    BlogPost getBlogPost(@PathVariable("id") String blogPostId) {
+        logger.info("Start getBlogPost. ID="+blogPostId);
+        try {
+            return blogPostService.getBlogPost(blogPostId);
+        } catch (IllegalArgumentException iae) {
+            throw new RestOperationException(iae.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
     @RequestMapping(value = "/posts", method = RequestMethod.GET)
     public @ResponseBody
     List<BlogPost> getAllBlogPost() {
         logger.info("Start getAllBlogPost.");
-        return blogPostRepository.findAll();
+        return blogPostService.getAllBlogPost();
     }
     @RequestMapping(value = "/posts", method = RequestMethod.POST)
     public @ResponseBody
     BlogPost createBlogPost(@RequestBody BlogPost blogPost) {
         logger.info("Start createBlogPost.");
-        return blogPostRepository.save(blogPost);
+        return blogPostService.saveBlogPost(blogPost);
     }
 
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.PUT)
     public @ResponseBody
     BlogPost updateBlogPost(@RequestBody BlogPost blogPost) {
         logger.info("Update blog.");
-        return blogPostRepository.save(blogPost);
+        return blogPostService.saveBlogPost(blogPost);
     }
 
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.DELETE)
     public @ResponseBody
     void deleteBlogPost(@PathVariable("id") String blogPostId) {
         logger.info("Start deleteBlogPost.");
-        blogPostRepository.deleteById(blogPostId);
+        try {
+            blogPostService.deleteBlogPost(blogPostId);
+        } catch (IllegalArgumentException iae) {
+            throw new RestOperationException(iae.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 }
