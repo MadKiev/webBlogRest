@@ -4,6 +4,7 @@ import com.gmail.madkiev.exception.RestOperationException;
 import com.gmail.madkiev.model.BlogPost;
 import com.gmail.madkiev.repository.BlogPostRepository;
 import com.gmail.madkiev.service.BlogPostService;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-
-@RequestMapping("/blogPost")
+@Api(value = "Blog post Controller", description = "Blog post control interface", produces = "application/json")
+@RequestMapping("/api/v1/blogPost")
 @Controller
 public class BlogPostController {
     private static final Logger logger = LoggerFactory.getLogger(BlogPostController.class);
