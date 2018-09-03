@@ -18,5 +18,6 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.gmail.madkiev.controller"))
                 .paths(PathSelectors.any())
                 .build();
+
     }
 }

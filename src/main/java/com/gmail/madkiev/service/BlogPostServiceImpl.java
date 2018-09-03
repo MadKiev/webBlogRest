@@ -23,6 +23,11 @@ public class BlogPostServiceImpl implements BlogPostService {
     }
 
     @Override
+    public List<BlogPost> getUserBlogPostList(String username) {
+        return blogPostRepository.findAllByOwnerId(username);
+    }
+
+    @Override
     public BlogPost saveBlogPost(BlogPost blogPost) {
         return blogPostRepository.save(blogPost);
     }

@@ -1,5 +1,7 @@
 package com.gmail.madkiev.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +14,8 @@ public class BlogPost {
     private String id;
     private String name;
     private String message;
+
+    @JsonIgnore
     private String ownerId;
 
     public String getOwnerId() {

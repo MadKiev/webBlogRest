@@ -22,7 +22,7 @@ import static org.springframework.security.web.context.HttpSessionSecurityContex
 @Api(value = "Authentication Controller", description = "Authentication control interface")
 @RequestMapping("/api/v1/auth")
 @Controller
-public class AuthController {
+public class RestAuthController {
 
     @Autowired
     AuthenticationManager authenticationManager;
@@ -32,7 +32,6 @@ public class AuthController {
         UsernamePasswordAuthenticationToken authReq
                 = new UsernamePasswordAuthenticationToken(credentials.getUsername(), credentials.getPassword());
         Authentication auth = authenticationManager.authenticate(authReq);
-
         SecurityContext sc = SecurityContextHolder.getContext();
         sc.setAuthentication(auth);
         HttpSession session = req.getSession(true);

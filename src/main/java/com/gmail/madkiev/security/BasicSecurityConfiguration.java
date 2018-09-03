@@ -43,6 +43,8 @@ public class BasicSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/webjars/**").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
                 .antMatchers("/v2/api-docs/**").permitAll()
+                .antMatchers("/api/v1/blogPost/*").permitAll()
+                .antMatchers("/api/v1/blogPost/**").permitAll()
                 .anyRequest().authenticated()
         ;
         // @formatter:on
