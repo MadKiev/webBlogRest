@@ -14,7 +14,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
 
 @Api(value = "Blog post Controller", description = "Blog post control interface", produces = "application/json")
 @RequestMapping("/api/v1/blogPost")
